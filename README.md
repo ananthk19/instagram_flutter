@@ -1,16 +1,9 @@
 # instagram_flutter
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Login 
+![alt_text]('https://github.com/ananthk19/instagram_flutter/blob/master/lib/assets/login_screen.jpeg')
+# Signup 
+![alt_text]('https://github.com/ananthk19/instagram_flutter/blob/master/lib/assets/sign_up_screen.jpeg')
+# Posting
+![alt_text]('https://github.com/ananthk19/instagram_flutter/blob/master/lib/assets/add_posts_screen.jpeg')
+![alt_text]('https://github.com/ananthk19/instagram_flutter/blob/master/lib/assets/add_posts-screen2.jpeg')
