@@ -3,6 +3,7 @@ import "package:flutter_svg/flutter_svg.dart";
 import 'package:instagram_flutter/resources/firebase_auth_methods.dart';
 import 'package:instagram_flutter/screens/sign_up_screen.dart';
 import 'package:instagram_flutter/utils/colors.dart';
+import 'package:instagram_flutter/utils/global_variables.dart';
 import 'package:instagram_flutter/widgets/text_field_input.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -47,7 +48,11 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       body: SafeArea(
         child:Container(
-          padding: const EdgeInsets.symmetric(horizontal: 32),
+          padding: MediaQuery.of(context).size.width > WebScreenSize
+          ? EdgeInsets.symmetric(
+            horizontal: MediaQuery.of(context).size.width /3
+          )
+          : const EdgeInsets.symmetric(horizontal: 32),
           width: double.infinity,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,

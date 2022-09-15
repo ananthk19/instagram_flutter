@@ -104,4 +104,40 @@ class FireStoreMethods {
     }
     return res;
   }
+
+  // Follow User
+
+  Future<String> followUnfollowUser(
+    String our_uid,
+    String thier_uid
+  ) async {
+
+    String res = "Some ERROR has occurred";
+    try {
+      DocumentSnapshot snap = await _firestore.collection('users').doc(thier_uid).get();
+      List thier_followers = (snap.data()! as dynamic)['followers'];
+      
+      if(thier_followers.contains(our_uid)){
+        await _firestore.collection('users').doc(thier_uid).update({
+          "followers": FieldValue.arrayRemove([our_uid])
+        });
+        await _firestore.collection('users').doc(our_uid).update({
+          "following": FieldValue.arrayRemove([thier_uid])
+        });
+      } else {
+        await _firestore.collection('users').doc(thier_uid).update({
+          "followers": FieldValue.arrayUnion([our_uid])
+        });
+        await _firestore.collection('users').doc(our_uid).update({
+          "following": FieldValue.arrayUnion([thier_uid])
+        });
+      }
+      res = "success";
+      
+    } catch (e) {
+      res = e.toString();
+    }
+
+    return res;
+  }
 }

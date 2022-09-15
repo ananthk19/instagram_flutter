@@ -3,6 +3,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_flutter/provider/user_provider.dart';
+import 'package:instagram_flutter/screens/add_posts_screen.dart';
+import 'package:instagram_flutter/screens/feed_screen.dart';
+import 'package:instagram_flutter/screens/profile_screen.dart';
+import 'package:instagram_flutter/screens/search_screen.dart';
 import 'package:instagram_flutter/utils/colors.dart';
 import 'package:instagram_flutter/utils/global_variables.dart';
 import 'package:provider/provider.dart';
@@ -23,6 +27,7 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
   void initState() {
     super.initState();
     pageController = PageController();
+    // print("Uid is ${FirebaseAuth.instance.currentUser!.uid}!!!");
   }
 
   @override
@@ -46,7 +51,13 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
     model.User user = Provider.of<UserProvider>(context).getUser;
     return Scaffold(
       body:PageView(
-            children: homeScreenItems,
+            children: [
+              FeedScreen(),
+              SearchScreen(),
+              AddPostsScreen(),
+              Center(child: Text("Notifs")),
+              ProfileScreen(uid: FirebaseAuth.instance.currentUser!.uid),
+            ],
             physics: const NeverScrollableScrollPhysics(),
             controller: pageController,
             onPageChanged: onPageChanged,

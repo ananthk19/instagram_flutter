@@ -110,7 +110,7 @@ class _AddPostsScreenState extends State<AddPostsScreen> {
     return _file == null 
     ? Center(
       child: IconButton(
-        icon: const Icon(Icons.cloud_upload_rounded),
+        icon: const Icon(Icons.cloud_upload_rounded,size: 55,),
         onPressed: () => _selectImage(context),
       ),
     )
@@ -119,7 +119,7 @@ class _AddPostsScreenState extends State<AddPostsScreen> {
         backgroundColor: mobileBackgroundColor,
         leading:  IconButton(
           onPressed: clearImage, 
-          icon: Icon(Icons.arrow_back_rounded)
+          icon: Icon(Icons.arrow_back_rounded),
           ),
           title: const Text("Post To"),
           centerTitle: false,
