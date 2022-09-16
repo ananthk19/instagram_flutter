@@ -1,7 +1,7 @@
 # instagram_flutter
 
 # Login 
-![alt_text](https://github.com/ananthk19/instagram_flutter/blob/master/lib/assets/login_screen.jpeg)
+<img src="lib/assets/login_screen">
 # Signup 
 ![alt_text](https://github.com/ananthk19/instagram_flutter/blob/master/lib/assets/sign_up_screen.jpeg)
 # Feeds
